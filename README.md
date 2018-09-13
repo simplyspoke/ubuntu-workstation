@@ -1,6 +1,6 @@
-# osx-config
+# ubuntu-config
 
-A script to spin up a new OSX workstation designed specifically for Node.js development leveraging an AWS environment. Current version targets the Macbook Pro 2017.
+A script to spin up a new Ubuntu workstation designed specifically for Node.js/RoR development leveraging an AWS environment.
 
 ## How to use it
 
@@ -13,24 +13,10 @@ Before the script begins installing and configuring your workstation, it will as
 
 The first optional action this script offers is to overwrite the existing `~/.bash_profile` with the one present in the `files/` directory. This new `.bash_profile` provides a good collection of useful customizations and functions that are designed to enhance our terminal experience. It is a good idea to review that file to learn more about what is provided.
 
-### Xcode
+### Apt-Get
 
-As this is for a development workstation, the first thing we do is confirm that we have XCode installed. If it is, we continue, otherwise we install it.
+Lets go ahead and get it installed and a few additional packages:
 
-### Finder
-
-Our next step is to make some basic system adjustments particularly to the finder. We...
-
-* Show the Library folder
-* Show hidden files
-* Show the path bar
-* Show the status bar
-
-### Homebrew
-
-Homebrew is a very powerful package manager for OSX, so we go ahead and get it installed and a few additional packages:
-
-* mas
 * bash-completion
 * gedit
 * git
@@ -43,12 +29,6 @@ Homebrew is a very powerful package manager for OSX, so we go ahead and get it i
 * coreutils
 * java
 * mongodb
-
-### MAS
-
-MAS is the missing Mac App Store command line interface provided to us via our lovely Homebrew bundle above. As we are going to be using it later in the script, we first want to make sure that we are signed into our AppleID which is the next step.
-
-If we are, theres a quick error and continue to execute the script.
 
 ### Git
 
