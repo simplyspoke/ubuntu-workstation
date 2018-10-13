@@ -12,8 +12,12 @@ aws-cdk \
 aws-sdk \
 commitizen \
 cz-conventional-changelog \
-git-run \
+firebase-tools \
+jest-cli \
+lerna \
+npm-check-updates \
 prettier \
-serverless
+serverless \
+
 
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
