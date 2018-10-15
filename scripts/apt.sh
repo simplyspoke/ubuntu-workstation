@@ -19,3 +19,6 @@ software-properties-common \
 solaar \
 ssh \
 tilix \
+
+
+sudo apt-get remove gnome-shell-extension-ubuntu-dock

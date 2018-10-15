@@ -10,4 +10,5 @@ read -p 'Have you signed into Dropbox and allowed it to sync? (y/n)' install
 if [ $install = 'y' ]; then
   rm -rf ~/Documents && ln -s ~/Dropbox/Documents ~/Documents
   rm -rf ~/Pictures && ln -s ~/Dropbox/Pictures ~/Pictures
+  rm -rf ~/projects/projects.json && ln -s ~/Dropbox/projects/projects.json ~/projects/projects.json
 fi
