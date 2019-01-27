@@ -5,6 +5,13 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 # Decrease swap usage to a more reasonable level
 # vm.swappiness=10
 
+gsettings set org.gnome.settings-daemon.peripherals.keyboard numlock-state 'on'
+
+sudo snap set system refresh.retain=2
+
+sudo update-alternatives --config x-terminal-emulator
+
+sudo ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
 
 echo '\nSetup SSH Configurations\n'
 

@@ -18,11 +18,13 @@ jest-cli \
 npm-check-updates \
 prettier \
 serverless \
-terminalizer
+terminalizer \
 
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 echo '\nInstalling Yarn\n'
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install --no-install-recommends yarn
 
 

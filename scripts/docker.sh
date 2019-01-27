@@ -31,24 +31,25 @@ sudo usermod -aG docker $USER
 
 echo '\nInstall kitematic\n'
 
-kiteTag=$(curl https://api.github.com/repos/docker/kitematic/releases/latest |
+version=$(curl https://api.github.com/repos/docker/kitematic/releases/latest |
     grep '"tag_name":' |                     # Get tag line
-    sed -E 's/.*"([^"]+)".*/\1/')             # Pluck JSON value
+    sed -E 's/.*"([^"]+)".*/\1/' |
+    sed 's/^.//')             # Pluck JSON value
 
-echo $kiteTag
+echo $version
 
 downloadPath="$HOME/Downloads"
 
 echo $downloadPath
 
-remotePath="https://github.com/docker/kitematic/releases/download/$kiteTag/Kitematic-${kiteTag:1}-Ubuntu.zip"
-
-localPath="$downloadPath/Kitematic-${kiteTag:1}-Ubuntu.zip"
+remotePath="https://github.com/docker/kitematic/releases/download/v$version/Kitematic-$version-Ubuntu.zip"
 
 echo $remotePath
+
+localPath="$downloadPath/Kitematic-$version-Ubuntu.zip"
 
 wget $remotePath -O $localPath
 
 unzip $localPath -d $downloadPath
 
-sudo dpkg -i "$downloadPath/Kitematic-${kiteTag:1}_amd64.deb"
+sudo dpkg -i "$downloadPath/Kitematic-${version}_amd64.deb"
